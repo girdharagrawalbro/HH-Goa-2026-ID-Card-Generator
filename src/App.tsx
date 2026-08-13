@@ -13,6 +13,7 @@ export default function App() {
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
   const [name, setName] = useState('');
   const [stack, setStack] = useState('');
+  const [teamName, setTeamName] = useState('');
   const [builderClass, setBuilderClass] = useState<string>(() => getRandomBuilderClass());
   const [shuffleSpinning, setShuffleSpinning] = useState(false);
   const [dragOver, setDragOver] = useState(false);
@@ -145,7 +146,8 @@ export default function App() {
       const text = encodeURIComponent(
         `Locked in for Hacker House Goa 2026! 🌴🛠️\n\n` +
         `Builder Class: ${builderClass}\n` +
-        (stack ? `Stack: ${stack}\n\n` : '\n') +
+        (stack ? `Stack: ${stack}\n` : '') +
+        (teamName ? `Team: ${teamName}\n\n` : '\n') +
         `Ready to ship code on the beach from Oct 28–31. No fluff, just pure build station. 🏖️\n\n` +
         `#FrameInGoa @247pmstudio\n` +
         `hhgoa.com`
@@ -153,7 +155,7 @@ export default function App() {
       window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank', 'noopener');
       setIsModalOpen(false);
     }, 100);
-  }, [previewUrl, builderClass, stack, showToast]);
+  }, [previewUrl, builderClass, stack, teamName, showToast]);
 
   return (
     <div className="min-h-screen flex flex-col relative z-1">
@@ -181,6 +183,7 @@ export default function App() {
               name={name}
               stack={stack}
               builderClass={builderClass}
+              teamName={teamName}
             />
           </div>
         </section>
@@ -249,6 +252,19 @@ export default function App() {
                 value={name}
                 onChange={e => setName(e.target.value)}
                 maxLength={36}
+              />
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label className="text-[0.68rem] font-bold tracking-[0.14em] uppercase text-[#fffef5]/65" htmlFor="team-input">Team Name (Optional)</label>
+              <input
+                id="team-input"
+                className="bg-[#0f3d1a]/45 border border-[rgba(245,197,24,0.2)] rounded-xl px-4 py-3 font-body text-[0.92rem] font-medium text-[#fffef5] w-full transition-all duration-250 outline-none focus:border-hh-gold focus:bg-[#0f3d1a]/65 focus:shadow-[0_0_0_3px_rgba(245,197,24,0.09)]"
+                type="text"
+                placeholder="e.g. Code Sandstorm"
+                value={teamName}
+                onChange={e => setTeamName(e.target.value)}
+                maxLength={40}
               />
             </div>
 

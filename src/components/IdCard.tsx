@@ -5,10 +5,11 @@ interface IdCardProps {
   name: string;
   stack: string;
   builderClass: string;
+  teamName?: string;
 }
 
 const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
-  ({ photoUrl, name, stack, builderClass }, ref) => {
+  ({ photoUrl, name, stack, builderClass, teamName }, ref) => {
     return (
       <div
         ref={ref}
@@ -64,7 +65,7 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
 
         <div className="flex flex-col items-center px-5 pb-0">
           <div
-            className="text-center font-black mb-2 leading-tight"
+            className="text-center font-black leading-tight"
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontSize: name ? '1.4rem' : '1rem',
@@ -77,8 +78,18 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
             {name || 'Your Name'}
           </div>
 
+          {/* Team Name display */}
+          {teamName && (
+            <div
+              className="text-center font-bold text-xs uppercase tracking-widest text-hh-pink mt-1 mb-2"
+              style={{ letterSpacing: '0.1em' }}
+            >
+              Team: {teamName}
+            </div>
+          )}
+
           <div
-            className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 mb-4 text-xs font-bold uppercase tracking-wide"
+            className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 mt-2 mb-4 text-xs font-bold uppercase tracking-wide"
             style={{
               background: 'linear-gradient(135deg, rgba(245,197,24,0.18), rgba(245,197,24,0.06))',
               border: '1.5px solid rgba(245,197,24,0.45)',
