@@ -191,7 +191,7 @@ export default function App() {
         <section className="py-4 px-8 md:py-4 md:px-7 flex flex-col justify-center gap-4 overflow-y-auto bg-[#060f09]/20">
           <div className="flex flex-col gap-2">
             <h1 className="font-display text-3xl font-extrabold leading-none text-[#fffef5] tracking-tight">
-              Your Badge,<br /><span className="text-hh-gold">Your Vibe.</span>
+              Your Badge, <span className="text-hh-gold">Your Vibe.</span>
             </h1>
             <p className="text-[0.83rem] text-[#fffef5]/65 leading-relaxed">
               Upload your photo · fill in your details · download and share on X with{' '}
