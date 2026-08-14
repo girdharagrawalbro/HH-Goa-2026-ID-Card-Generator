@@ -176,7 +176,7 @@ export default function App() {
 
       <main className="flex-1 grid grid-cols-1 md:grid-cols-2">
         <section className="flex flex-col items-center justify-center p-8 border-b md:border-b-0 md:border-r border-[rgba(245,197,24,0.35)] bg-[#060f09]/30">
-          <div className="relative w-full max-w-[320px] before:content-[''] before:block before:w-[3px] before:h-7 before:bg-gradient-to-b before:from-transparent before:to-hh-gold-dark before:mx-auto fade-up">
+          <div className="id-card-scaler-wrap before:content-[''] before:block before:w-[3px] before:h-7 before:bg-gradient-to-b before:from-transparent before:to-hh-gold-dark before:mx-auto fade-up">
             <IdCard
               ref={cardRef}
               photoUrl={photoUrl}
