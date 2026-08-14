@@ -1,4 +1,4 @@
-﻿import { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 interface IdCardProps {
   photoUrl: string | null;
@@ -13,7 +13,7 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
     return (
       <div
         ref={ref}
-        className="relative rounded-3xl overflow-hidden font-display card-shadow id-card"
+        className="rounded-3xl overflow-hidden font-display card-shadow id-card"
         style={{
           backgroundColor: '#061a0b',
           fontFamily: "'Outfit', sans-serif",
@@ -23,6 +23,8 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
           maxWidth: '320px',
           minHeight: '480px',
           maxHeight: '480px',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         {/* Brand banner */}
@@ -77,8 +79,8 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
           </div>
         </div>
 
-        {/* Text content — explicit width: 100% on every text child prevents flex shrink-to-content wrapping */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 20px' }}>
+        {/* Text content — flex:1 fills remaining space, pushing footer to bottom */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 20px', flex: 1 }}>
 
           {/* Name — always single line */}
           <div
@@ -184,13 +186,9 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
           </div>
         </div>
 
-        {/* Footer pinned to bottom */}
+        {/* Footer — sits naturally at bottom thanks to flex column layout */}
         <div
           style={{
-            position: 'absolute',
-            bottom: '4px',
-            left: 0,
-            right: 0,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -213,7 +211,7 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
           </div>
         </div>
 
-        <div className="h-1 rainbow-bar absolute bottom-0 left-0 right-0" />
+        <div className="h-1 rainbow-bar" />
       </div>
     );
   }
