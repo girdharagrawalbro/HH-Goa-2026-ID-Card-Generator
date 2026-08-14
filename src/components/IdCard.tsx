@@ -28,7 +28,7 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
         }}
       >
         {/* Brand banner */}
-        <div className="relative overflow-hidden" style={{ height: '140px', backgroundColor: '#0a2e12' }}>
+        <div className="relative overflow-hidden" style={{ height: '130px', backgroundColor: '#0a2e12' }}>
           <img
             src="/hh-goa-brand.webp"
             alt="Hacker House Goa 2026"
@@ -46,8 +46,8 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
           />
         </div>
 
-        {/* Avatar */}
-        <div className="flex justify-center relative z-10" style={{ marginTop: '-56px', marginBottom: '8px' }}>
+        {/* Avatar — small overlap clips only the bottom decorative trim, not the text */}
+        <div className="flex justify-center relative z-10" style={{ marginTop: '-20px', marginBottom: '6px' }}>
           <div
             className="w-28 h-28 rounded-full gold-ring ring-spin p-[3px]"
             style={{ boxShadow: '0 0 24px rgba(245,197,24,0.35), 0 8px 32px rgba(0,0,0,0.6)' }}
