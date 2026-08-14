@@ -251,7 +251,7 @@ export default function App() {
                 placeholder="e.g. Priya Sharma"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                maxLength={36}
+                maxLength={18}
               />
             </div>
 
@@ -264,7 +264,7 @@ export default function App() {
                 placeholder="e.g. Code Sandstorm"
                 value={teamName}
                 onChange={e => setTeamName(e.target.value)}
-                maxLength={40}
+                maxLength={18}
               />
             </div>
 
@@ -277,7 +277,7 @@ export default function App() {
                 placeholder="e.g. Fullstack · Rust · ML"
                 value={stack}
                 onChange={e => setStack(e.target.value)}
-                maxLength={55}
+                maxLength={24}
               />
             </div>
 
@@ -291,7 +291,7 @@ export default function App() {
                   placeholder="Your builder title"
                   value={builderClass}
                   onChange={e => setBuilderClass(e.target.value)}
-                  maxLength={48}
+                  maxLength={22}
                 />
                 <button
                   id="shuffle-btn"
