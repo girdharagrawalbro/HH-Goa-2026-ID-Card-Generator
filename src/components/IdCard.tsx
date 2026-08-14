@@ -13,8 +13,17 @@ const IdCard = forwardRef<HTMLDivElement, IdCardProps>(
     return (
       <div
         ref={ref}
-        className="relative w-[320px] h-[480px] rounded-3xl overflow-hidden font-display card-shadow transition-transform duration-400 id-card"
-        style={{ backgroundColor: '#061a0b', fontFamily: "'Outfit', sans-serif" }}
+        className="relative rounded-3xl overflow-hidden font-display card-shadow transition-transform duration-400 id-card"
+        style={{
+          backgroundColor: '#061a0b',
+          fontFamily: "'Outfit', sans-serif",
+          width: '320px',
+          height: '480px',
+          minWidth: '320px',
+          maxWidth: '320px',
+          minHeight: '480px',
+          maxHeight: '480px',
+        }}
       >
         <div className="relative h-44 overflow-hidden" style={{ backgroundColor: '#0a2e12' }}>
           <img
